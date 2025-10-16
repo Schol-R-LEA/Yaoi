@@ -1,1 +1,1 @@
-Yaoi - Yet Another OOP Impelementation for R6RS Scheme
+Yaoi - Yet Another OOP Implementation for R6RS Scheme
