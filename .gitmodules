@@ -1,3 +1,6 @@
 [submodule "Scheme-Exception-Utils"]
 	path = Scheme-Exception-Utils
 	url = https://github.com/Schol-R-LEA/Scheme-Exception-Utils
+[submodule "src/Scheme-Exception-Utils"]
+	path = src/Scheme-Exception-Utils
+	url = https://github.com/Schol-R-LEA/Scheme-Exception-Utils
