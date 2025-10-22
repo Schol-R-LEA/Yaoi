@@ -17,7 +17,7 @@
  runner
  (test-group
   "test class creation"
-  (let ((cls-0 (make-dispatchable-class
+  (let ((cls-0 (make-class
                 (foo bar baz)
                 (methods (quux foo)
                          (zark (begin
