@@ -1,15 +1,15 @@
 #!r6rs
 
 (import
-  (rnrs base (6))
-  (rnrs io ports (6))
-  (srfi 1)               ;; list utils
-  (srfi 13)              ;; string utils
-  (srfi 14)              ;; charsets
-  (srfi 43)              ;; vector utils
-  (srfi 88)              ;; keywords
-  (srfi 64)              ;; test suite
-  (Yaoi))
+ (rnrs base (6))
+ (rnrs io ports (6))
+ (srfi 1 lists)
+ (srfi 13 strings)
+ (srfi 14 charsets)
+ (srfi 43 vectors)
+ (srfi 88 keywords)
+ (srfi 64 test)
+ (Yaoi classes))
 
 (define runner (test-runner-simple))
 
@@ -17,14 +17,16 @@
  runner
  (test-group
   "test class creation"
-  (let ((cls-0 (make-class
-                (foo bar baz)
-                (methods (quux foo)
-                         (zark (begin
-                                (display baz)
-                                (if (number? baz)
-                                  (+ 1 baz)
-                                  baz)))))))
+  (let 
+    ((cls-0 
+      (make-class
+       (members ((foo '()) (bar '()) (baz '())))
+       (methods (quux foo)
+                (zark (begin
+                       (display baz)
+                       (if (number? baz)
+                         (+ 1 baz)
+                         baz)))))))
     (test-assert (procedure? cls-0))
     (test-group
      "test basic object creation"
